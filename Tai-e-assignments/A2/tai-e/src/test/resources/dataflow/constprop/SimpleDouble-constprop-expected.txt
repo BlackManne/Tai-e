@@ -1,0 +1,31 @@
+-------------------- <MyClass: void <init>()> (constprop) --------------------
+[0@L2] invokespecial %this.<java.lang.Object: void <init>()>(); {}
+[1@L2] temp$0 = 5.0F; {}
+[2@L3] %this.<MyClass: float x> = temp$0; {}
+[3@L3] return; {}
+
+-------------------- <SimpleDouble: void <init>()> (constprop) --------------------
+[0@L6] invokespecial %this.<java.lang.Object: void <init>()>(); {}
+[1@L6] return; {}
+
+-------------------- <SimpleDouble: void testDouble(double,MyClass)> (constprop) --------------------
+[0@L11] %doubleconst0 = 2.0; {}
+[1@L11] x = x * %doubleconst0; {}
+[2@L12] %doubleconst1 = 200.0; {}
+[3@L12] temp$1 = x cmpl %doubleconst1; {}
+[4@L12] %intconst2 = 0; {%intconst2=0}
+[5@L12] if (temp$1 <= %intconst2) goto 11; {%intconst2=0}
+[6@L12] goto 7; {%intconst2=0}
+[7@L12] nop; {%intconst2=0}
+[8@L13] y = 1.0F; {%intconst2=0}
+[9@L14] z = -1L; {%intconst2=0}
+[10@L12] goto 14; {%intconst2=0}
+[11@L12] nop; {%intconst2=0}
+[12@L16] y = -1.0F; {%intconst2=0}
+[13@L17] z = 1L; {%intconst2=0}
+[14@L17] nop; {%intconst2=0}
+[15@L19] temp$6 = (int) z; {%intconst2=0, temp$6=NAC}
+[16@L19] temp$7 = (float) temp$6; {%intconst2=0, temp$6=NAC}
+[17@L19] temp$8 = y * temp$7; {%intconst2=0, temp$6=NAC}
+[18@L19] myClass.<MyClass: float x> = temp$8; {%intconst2=0, temp$6=NAC}
+[19@L19] return; {%intconst2=0, temp$6=NAC}
